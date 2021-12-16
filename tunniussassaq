@@ -1,0 +1,311 @@
+# Først laver vi en database der hedder Bibliotek
+CREATE DATABASE Bibliotek;
+
+# Derefter laver vi tables der indeholder bøger og informationer
+CREATE TABLE Bog (
+PK_Bog_ID int, 
+Bogtitle varchar(100), 
+Genre varchar(45), 
+Forlag varchar(45), 
+Udgivelsesdato year);
+
+CREATE TABLE Emner (
+PK_Emne_ID int,
+Emnenavn varchar(100)
+);
+
+CREATE TABLE Forfatter(
+PK_Forfatter_ID int,
+Forfatternavn varchar(100),
+Land varchar(100),
+Fødested varchar(100),
+Fødselsdag year, 
+Dødsdato year,
+Initialer varchar(45)
+);
+
+CREATE TABLE Genre(
+Genretype_ID int,
+Genrenavn varchar(45)
+);
+
+CREATE TABLE Bogeksemplarer(
+PK_Bog_ID decimal(100),
+Eksemplarnr decimal(100)
+);
+
+
+
+#######################################################################
+
+
+
+
+# Når vi har lavet fundamentet til databasen, så tilføjer vi bøgerne og al infomation
+
+# Indsæt bogID også bøger ind også udgivelsesdato
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('55', 'Videnskab Teknologi Og Samfund', 'Skønlitteratur', 'Deres forlag', '2011');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('66', 'Agile Projekter', 'Fagbog', 'Gyldendaals forlag', '2010');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('88', 'Python Programming', 'Skønlitteratur', 'Gyldedaals forlag', '2000');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('99', 'Python Crash Course', 'Fagbog', 'Gads forlag', '2019');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('77', 'Ledelse i praksis', 'Fagbog', 'Hvis forlag', '2014');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('09', 'Big Data', 'Fagbog', 'Mit forlag', '2004');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('84', 'IT and business models : concepts and theories', 'Fagbog', 'Deres forlag', '2003');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('41', 'Datasans : etisk skole- og uddannelsesledelse med data', 'Fagbog', 'Din forlag', '2009');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('21', 'E-commerce 2019 : Business, technology, society', 'Skønlitteratur', 'Lægens forlag' '2008');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('34', 'Web application security : a beginner’s guide', 'Skønlitteratur', 'Womens forlag' '2007');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('65', 'Persondataret', 'Fagbog', 'Mans forlag', '2020');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('87', 'De skjulte algoritmer : teknoantropologiske perspektiver', 'Skønlitteratur', 'Gads forlag', '2012');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('36', 'Dataetik - Den nye konkurrencefordel', 'Skønlitteratur', 'Møllers forlag', '2021');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('01', 'Semantisk søgning og søgemaskineoptimering : om Google-søgetjenester, schema.org og det semantiske web', 'Fagbog', 'Julkes forlag', '2020');
+
+INSERT INTO Bog (PK_Bog_ID, Bogtitle, Genre, Forlag, Udgivelsesdato)
+VALUES ('03', 'Webdesign 3.0 : Fra semiotisk design til strukturerede data', 'Skønlitteratur', 'Gads forlag', '2006');
+
+
+
+
+###############################################################################
+
+
+
+
+
+# Indsæt emner ind
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES ('1', 'En Introduktion om STS');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (2, 'Samfundslitteratur');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (3, 'Computer Program Language');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (4, 'Project-based introduction to programming');
+
+INSERT INTO Emner(PK_Emne_ID, Emnenavn)
+VALUES (5, 'Virksomhedsledelse');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (6, 'Dataindsamling');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (7, 'Informationsteknologi');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (8, 'Skoleudvikling');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (9, 'Informationsteknologi');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (10, 'Datasikkerhed');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (11, 'Datasikkerhed');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (12, 'Teknologisk udvikling');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (13, 'Datasikkerhed');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (14, 'Webdesign');
+
+INSERT INTO Emner (PK_Emne_ID, Emnenavn)
+VALUES (15, 'Webdesign');
+
+
+
+###############################################################################
+
+
+
+
+# Indsæt og tilføj Forfatternes info, som er i følge dette rækkefølge: Initialer, forfatternes navne, efternavne først og derefter deres fornavn, Land, Fødested, Fødselsdag og dødsdato
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  ('DPGC', 'Gad, Christopher', 'Denmark', 'Aarhus', '21121989', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (PHJA, 'Pries-Heje, Jan', 'Denmark', 'Aalborg', '76121981', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (ZEJO, 'Zelle, John', 'England', 'Liverpool', '00121999', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (MAER, 'Matthes, Eric', 'Rusland', 'Moskva', '10121988', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (STER, 'Stansdrup, Erik', 'Norge', 'Oslo', '03311945', '31122021');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (MNWJ, 'Warren, James', 'USA', 'Washington', '02111955', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (HJKT, 'Kalling, Thomas', 'Poland', 'Gdansk', '11121991', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (STDO, 'Staunæs, Dorthe', 'Denmark', 'Odense', '24121977', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (LKTC, 'Laudon, Kenneth C.', 'USA', 'Califonien', '19041979', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (SBLV, 'Liu, Vincent', 'Spanien', 'Lanzarote', '18121981', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (HØDO, 'Høilund, Dorte', 'Denmark', 'Vejle', '01101960', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (BKFN, 'Birkholm, Klavs', 'Denmark', 'København', '21121955', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (HGTP, 'Tranberg, Pernille', 'Grønland', 'Nuuk', '21121989', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (JOLA, 'Johnsen, Lars', 'Grønland', 'Ilulissat', '27121975', '0');
+
+INSERT INTO Forfatter (Initialer, Forfatter, Land, Fødested, Fødselsdag, Dødsdato)
+VALUES  (JLNC, ' Nielsen, Carl-Henrik', 'Grønland', 'Qaqortoq', '07071991', '0');
+
+
+
+###############################################################################
+
+
+
+# Indsæt genretyper ind
+INSERT INTO Genre 
+VALUES  ('Fagbog');
+
+INSERT INTO Genre 
+VALUES  ('Skønlitteratur');
+
+
+
+###############################################################################
+
+
+
+# Indsæt antalet af Bogeksemplarer og derefter bogID og til sidst eks. nr.
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('101234', '55', '901');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('10234', '66', '902');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('10312', '88', '903');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('104566', '99', '904');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('10098', '77', '905');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('65432', '09', '906');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('12341','84', '907');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('20999','41', '908');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('20202', '21', '909');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('2020203', '34', '910');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('201810', '65', '911');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('201819', '87', '912');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('201820', '36', '913');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('201967', '01', '914');
+
+INSERT INTO Bogeksemplarer (Bogeksemplarer, PK_Bog_ID, Eksemplarnr)
+VALUES ('2018999', '03', '915');
+
+
+
+###############################################################################
+
+
+
+### SELECT STATEMENTS ###
+
+
+# Vi skal nu få lavet select statements der sorteres efter forfatterens efternavn først
+SELECT Forfatternavn, PK_Forfatter_ID
+FROM Forfatter
+WHERE Bog;
+
+# For at gøre det nemmere at søge efter title per forfattere
+SELECT Forfatternavn, Bogtitle
+FROM Forfatter;
+
+# Antal bøger per forfatter
+SELECT Forfatternavn, Antalbøgerperforfattere
+FROM Forfatter, Bogeksekseplarer;
+
+# For at søge antalet af bogeksemplarer per bog
+SELECT Bogtitle, Eksemplarnr
+FROM Bog, Bogeksemplarer;
+
+# For at vise hvilke genretyper der findes
+SELECT Genretype_ID, Genrenavn
+FROM Genre;
+
+# For at vise hvilke emner der findes
+SELECT PK_Emne_ID, Emnenavn
+FROM Emner;
+
+# For at se eller vise hvilke bøger der har sql i titlen, så skal de laves på denne måde
+SELECT PK_Bog_ID FROM Bog
+WHERE Bogtitle LIKE '%sql%';
+
+# Hvilke forfattere der har skrevet både fagbøger og skønlitteratur
+SELECT Genre FROM Bog
+WHERE Fagbog OR Skønlitteratur;
+
+# LAVE JOIN af copyright der skal indeholde en dødsdato
+SELECT Bogtitle, Forfatternavn
+FROM Bog
+JOIN Forfatter ON BogID = BogtitleID 
+JOIN PK_BogID ON PK_Forfatter_ID
